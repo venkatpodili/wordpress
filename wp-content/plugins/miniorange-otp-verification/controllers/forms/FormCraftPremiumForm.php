@@ -1,0 +1,14 @@
+<?php
+
+
+$handler 				   = FormCraftPremiumForm::instance();
+$fcpremium_enabled		   = $handler->isFormEnabled() ? "checked" : "";
+$fcpremium_hidden		   = $fcpremium_enabled== "checked" ? "" : "hidden";
+$fcpremium_enabled_type    = $handler->getOtpTypeEnabled();
+$fcpremium_list 		   = admin_url().'admin.php?page=formcraft_admin';
+$fcpremium_otp_enabled     = $handler->getFormDetails();
+$fcpremium_type_phone 	   = $handler->getPhoneHTMLTag();
+$fcpremium_type_email 	   = $handler->getEmailHTMLTag();
+$form_name                 = $handler->getFormName();
+
+include MOV_DIR . 'views/forms/FormCraftPremiumForm.php';
